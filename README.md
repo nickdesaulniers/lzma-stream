@@ -6,7 +6,7 @@ Provides streams that transform input to and from LZMA compression.
 
 ```js
 var fs = require('fs');
-var lzma = require('lzma-streams');
+var lzma = require('lzma-stream');
 
 var compressor = new lzma.LZMACompressionStream;
 var decompressor = new lzma.LZMADecompressionStream;

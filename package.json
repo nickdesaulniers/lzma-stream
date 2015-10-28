@@ -1,0 +1,26 @@
+{
+  "name": "lzma-stream",
+  "version": "1.0.0",
+  "description": "Provides streams that transform input to and from LZMA compression.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickdesaulniers/lzma-stream.git"
+  },
+  "keywords": [
+    "lzma",
+    "stream",
+    "streams"
+  ],
+  "author": "Nick Desaulniers",
+  "license": "Beerware",
+  "bugs": {
+    "url": "https://github.com/nickdesaulniers/lzma-stream/issues"
+  },
+  "homepage": "https://github.com/nickdesaulniers/lzma-stream#readme"
+}
