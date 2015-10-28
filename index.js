@@ -2,8 +2,11 @@ var lzma = require('lzma');
 var stream = require('stream');
 var util = require('util');
 
-function pushBufferedResult (result) {
-  this.push(new Buffer(result));
+function genPushBufferedResult (ctx, done) {
+  return function (result) {
+    ctx.push(new Buffer(result));
+    done();
+  }
 };
 
 function LZMACompressionStream (opt) {
@@ -15,7 +18,7 @@ function LZMACompressionStream (opt) {
 util.inherits(LZMACompressionStream, stream.Transform);
 
 LZMACompressionStream.prototype._transform = function (chunk, encoding, done) {
-  lzma.compress(chunk, this.level, pushBufferedResult.bind(this));
+  lzma.compress(chunk, this.level, genPushBufferedResult(this, done));
 };
 
 function LZMADecompressionStream (opt) {
@@ -26,7 +29,7 @@ function LZMADecompressionStream (opt) {
 util.inherits(LZMADecompressionStream, stream.Transform);
 
 LZMADecompressionStream.prototype._transform = function (chunk, encoding, done) {
-  lzma.decompress(chunk, pushBufferedResult.bind(this));
+  lzma.decompress(chunk, genPushBufferedResult(this, done));
 };
 
 module.exports = {

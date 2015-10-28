@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "Provides streams that transform input to and from LZMA compression.",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "lzma": "^2.2.2"
+  },
+  "devDependencies": {
+    "concat-stream": "^1.5.1",
+    "tape": "^4.2.2"
+  },
   "scripts": {
-    "test": "npm t"
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
