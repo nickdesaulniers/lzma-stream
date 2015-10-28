@@ -1,3 +1,6 @@
+# DO NOT USE
+https://github.com/nmrugg/LZMA-JS/issues/34#issuecomment-152024952
+
 # LZMA-Stream
 
 Provides streams that transform input to and from LZMA compression.
